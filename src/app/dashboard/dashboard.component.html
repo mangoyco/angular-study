@@ -1,0 +1,40 @@
+<style>
+    a{
+        display: block;
+        width: 200px;
+    }
+    h3,h4{
+        text-align: center;
+        color: #444;
+    }
+    .tabWarp{
+        display: grid;
+        grid-template-columns: repeat(4,20%);
+        grid-column-gap: 5%;
+    }
+    .tabWarp .tab{
+        cursor: pointer;
+        padding: 20px 0 20px 0;
+        background-color: #3f525c;
+        display: inline-block;
+        transition: all .5s;
+    }
+    .tabWarp .tab:hover{
+        background-color: #EEE;
+    }
+    .tabWarp .tab:hover h4{
+        color: #607d8b;
+    }
+    .tabWarp .tab h4{
+        color: azure;
+    }
+</style>
+<h3>Top Heroes</h3>
+<div class="tabWarp">
+    <div class="tab" *ngFor="let hero of Heroes" routerLink='/detail/{{hero.id}}'>
+        <h4>{{hero.name}}</h4>
+    </div>
+</div>
+
+<app-search></app-search>
+

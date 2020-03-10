@@ -1,0 +1,73 @@
+<style>
+    .card:nth-child(1){
+        margin-top: 10px;
+    }
+    .card{
+        width:20%;
+        height: 40px;
+        line-height: 40px;
+        background-color: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 5px;
+        transition: all .4s;
+    }
+    .card:hover{
+        background-color: #ddd;
+        color: #607D8B;
+        margin-left: 8px;
+    }
+    .card span,.card div{
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    .card .right{
+        position: relative;
+        padding-left: 5%;
+        width: 80%;
+    }
+    .card .id{
+        width: 20%;
+        text-align: center;
+        background-color: #405061;
+        color: azure;
+    }
+    .card .right .icon{
+        padding: 5px 10px;
+        position: absolute;
+        right: 8px;
+        width: 24%;
+        height: 90%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: gray;
+        border-radius: 4px;
+        color: azure;
+        border: none;
+    }
+</style>
+<h2>{{title}}</h2>
+
+<div>
+    <label>Hero name:
+        <input #heroName />
+    </label>
+
+    <button (click)="addNewHero(heroName.value);heroName.value=''">
+        add
+    </button>
+</div>
+
+<ul>
+    <li class="card" *ngFor="let item of heroes" (click)="toDetail(item.id)">
+        <span class="id">{{item.id}}</span>
+        <div class="right">
+            <span>{{item.name}}</span>
+            <button class="icon" (click)="deleteHero(item.id,$event)">x</button>
+        </div>
+    </li>
+</ul>
+
+
