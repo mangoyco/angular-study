@@ -34,6 +34,10 @@ export class HeroesComponent implements OnInit {
   }
 
   addNewHero(name:string){
+    if(!name.trim()){
+      alert('不能为空串')
+      return
+    }
     this.heroesService.addHero({name} as Hero).subscribe(res=>{
       this.heroes.push(res)
       console.log(res)
