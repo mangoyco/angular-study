@@ -14,13 +14,15 @@ import { MessagesComponent } from './messages/messages.component';
 import { SearchComponent } from './search/search.component';
 
 import { FormsModule } from '@angular/forms';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const router = [
   { path: '', redirectTo:'/dashboard',pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'detail/:id', component: DetailComponent },
-  { path: 'detail', component: DetailComponent}
+  { path: 'detail', component: DetailComponent},
+  { path: '**', component: NotfoundComponent},
 ]
 
 @NgModule({
@@ -30,7 +32,8 @@ const router = [
     DashboardComponent,
     DetailComponent,
     MessagesComponent,
-    SearchComponent
+    SearchComponent,
+    NotfoundComponent
   ],
   imports: [
     FormsModule,
