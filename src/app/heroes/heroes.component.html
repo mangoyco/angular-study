@@ -71,3 +71,32 @@
 </ul>
 
 
+<div *ngFor="let hero of heroes; let i=index; let odd=odd;  trackBy: trackById" [class.odd]="odd">
+  ({{i}}) {{odd}} {{hero.name}}
+</div>
+
+<p>
+  I turned the corner
+  <ng-container *ngIf="1==2">
+    and saw 66666
+  </ng-container>
+  and continued on my way.
+</p>
+
+
+<p *appUnless="condition" >
+  (A) This paragraph is displayed because the condition is false.
+</p>
+
+<p *appUnless="!condition" >
+  (B) Although the condition is true,
+  this paragraph is displayed because appUnless is set to false.
+</p>
+
+
+<p>The hero's birthday is {{ birthday | date:format | uppercase }} </p>
+<button (click)="toggleFormat()">Toggle Format</button>
+
+
+<p>这个数组长度比3 {{ arr | mypip:'sss' }} </p>
+

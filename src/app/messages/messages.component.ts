@@ -8,9 +8,15 @@ import { MessageService } from '../message.service';
 })
 export class MessagesComponent implements OnInit {
 
+  color = 'blue'
+
   constructor(public messageService:MessageService) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    console.log('dom',document)
   }
 
 }

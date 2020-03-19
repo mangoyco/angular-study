@@ -6,3 +6,10 @@
     <div *ngFor='let message of messageService.messages'> {{message}} </div>
   
 </div>
+
+<!-- <p appHighlight>Highlight me!</p> -->
+<!-- 
+<p appHighlight highlightColor="yellow">Highlighted in yellow</p>
+<p appHighlight [highlightColor]="'orange'">Highlighted in orange</p> -->
+
+<p [appHighlight]="color">Highlight me!</p>

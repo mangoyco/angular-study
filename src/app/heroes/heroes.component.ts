@@ -12,8 +12,16 @@ import { Router } from '@angular/router';
 })
 export class HeroesComponent implements OnInit {
 
-  title='My-heroes';
+  title = 'My-heroes';
+  arr:number[] = [1,2,3]
   heroes;
+  tt = true
+  condition = true
+  birthday = new Date(1988, 3, 15); // April 15, 1988
+  toggle = true; // start with true == shortDate
+
+  get format() { return this.toggle ? 'shortDate' : 'fullDate'; }
+  toggleFormat() { this.toggle = !this.toggle; }
 
   constructor(
     private heroesService:HeroesService,

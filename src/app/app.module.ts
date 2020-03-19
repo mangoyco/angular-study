@@ -13,8 +13,14 @@ import { DetailComponent } from './detail/detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SearchComponent } from './search/search.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.directive';
+import { MypipPipe } from './mypip.pipe';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found-component.component';
 
 const router = [
   { path: '', redirectTo:'/dashboard',pathMatch: 'full' },
@@ -33,9 +39,16 @@ const router = [
     DetailComponent,
     MessagesComponent,
     SearchComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HighlightDirective,
+    UnlessDirective,
+    MypipPipe,
+    ProfileEditorComponent,
+    HeroFormComponent,
+    PageNotFoundComponent
   ],
   imports: [
+    ReactiveFormsModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

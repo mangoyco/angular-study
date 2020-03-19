@@ -14,6 +14,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class HeroesService {
   private heroesUrl = 'api/heroes'  // URL to web api
 
+  bol = true
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }

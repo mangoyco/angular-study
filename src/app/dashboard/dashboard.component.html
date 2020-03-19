@@ -29,6 +29,9 @@
         color: azure;
     }
 </style>
+
+<app-hero-form></app-hero-form>
+
 <h3>Top Heroes</h3>
 <div class="tabWarp">
     <div class="tab" *ngFor="let hero of Heroes" routerLink='/detail/{{hero.id}}'>
